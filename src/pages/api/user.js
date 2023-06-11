@@ -6,8 +6,9 @@ export default async function handler(req, res) {
       user: "shunshimono",
       password: "shun1019S",
       database: "guestbook",
-      host: "127.0.0.1",
-      port: "3306",
+      socketPath: "/cloudsql/next-client-app-388804:us-central1:next-app",
+      //   host: "127.0.0.1",
+      //   port: "3306",
     });
     const result = await connection.query("SELECT * FROM entries;");
     res.status(200).json(result);
@@ -19,3 +20,5 @@ export default async function handler(req, res) {
       );
   }
 }
+
+// gcloud builds submit --tag gcr.io/next-client-app-388804/run-sql
