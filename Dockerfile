@@ -24,7 +24,6 @@ WORKDIR /app
 
 COPY --from=builder --chown=node:node /build/package.json /app/package.json
 COPY --from=builder --chown=node:node /build/package-lock.json /app/package-lock.json
-COPY --from=builder --chown=node:node /build/.npmrc /app/.npmrc
 COPY --from=builder --chown=node:node /build/.next /app/.next
 COPY --from=builder --chown=node:node /build/public /app/public
 
