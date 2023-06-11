@@ -1,11 +1,11 @@
 const { createServer } = require("http");
 const { parse } = require("url");
+const mysql = require("promise-mysql");
 const next = require("next");
 
 const dev = process.env.NODE_ENV !== "production";
 const hostname = "localhost";
 const port = 3000;
-// ミドルウェアを利用する場合、 `hostname` と `port` を以下のように提供する必要があります。
 const app = next({ dev, hostname, port });
 const handle = app.getRequestHandler();
 

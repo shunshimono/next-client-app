@@ -3,7 +3,7 @@ FROM node:18.14.2-alpine AS builder
 WORKDIR /build
 
 
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json server.js ./
 COPY . .
 
 RUN apk upgrade \
